@@ -1,22 +1,127 @@
-{
-    morgin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #000000;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* NAVIGATION ELEMENTS */
+html {
+  scroll-behavior: smooth; /* Smooth scroll effect */
+}
+
+body {
+  font-family: "TASA Orbiter", sans-serif;
+  font-weight: 400;
+  color: #000000;
+  background-color: #f4f4f4;
+}
+
+/* NAVIGATION */
 .navbar {
   display: flex;
-  
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* HERO / HOME */
+.section {
+  height: 100vh;
+  padding: 100px 20px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home {
+  background: purple;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animation for hero text */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#home h1,
+#home .hero-title,
+#home .hero-subtitle {
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+
+#home h1 {
+  font-size: 3rem;
+  animation-delay: 0.2s;
+}
+
+#home .hero-title {
+  font-size: 2rem;
+  margin: 20px 0;
+  animation-delay: 0.5s;
+}
+
+#home .hero-subtitle {
+  font-size: 1.2rem;
+  animation-delay: 0.8s;
+}
+
+/* OTHER SECTIONS */
+.section .content {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
